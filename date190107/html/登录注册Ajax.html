@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	用户名：<input type="text" class="user" name="">
+	密码：<input type="password" class="psd" name="">
+	<button class="btn">注册</button>
+	<p></p>
+</body>
+<script type="text/javascript">
+	$(function(){
+	$(".btn").click(function(){
+		var userVal = $(".user").val();
+		var psdVal = $(".psd").val();
+		console.log(userVal,psdVal)
+	})
+	$.ajax({
+		url:`https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&phone=${userVal}&passwd=${psdVal}`,
+		type:"post",
+		success:function( res ){
+			// console.log( res )
+			if( res.code == 200){
+				window.open("https://www.badu.com/")
+				$("p").html(res.msg)
+			}else if( res.code == 202 ){
+				$("p").html(res.msg)
+			}
+		}
+	})
+	})
+</script>
+</html>

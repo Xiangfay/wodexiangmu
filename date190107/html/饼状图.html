@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="../js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+	<script type="text/javascript" src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+	<script type="text/javascript" src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+</head>
+<body>
+	<div id="container" style="min-width:400px;height:400px"></div>
+</body>
+<script type="text/javascript">
+	// var json = {
+	// 	"web01"
+	// 		{"item":[
+	// 		{
+	// 			"name":"小明",
+	// 			"sex":"男",
+	// 			"hobby":"看小说",
+	// 			"number":"3"
+	// 		},
+	// 		{
+	// 			"name":"小康",
+	// 			"sex":"男",
+	// 			"hobby":"敲代码",
+	// 			"number":"1"
+	// 		},
+	// 		{
+	// 			"name":"艳艳",
+	// 			"sex":"女",
+	// 			"hobby":"看电影",
+	// 			"number":"2"
+	// 		},
+	// 		{
+	// 			"name":"原原",
+	// 			"sex":"男",
+	// 			"hobby":"看小说",
+	// 			"number":"2"
+	// 		},
+	// 		{
+	// 			"name":"小东",
+	// 			"sex":"男",
+	// 			"hobby":"打游戏",
+	// 			"number":"2"
+	// 		},
+	// 		{
+	// 			"name":"顺子",
+	// 			"sex":"男",
+	// 			"hobby":"打游戏",
+	// 			"number":"2"
+	// 		},
+	// 		{
+	// 			"name":"前前",
+	// 			"sex":"女",
+	// 			"hobby":"看小说",
+	// 			"number":"1"
+	// 		},
+	// 		{
+	// 			"name":"香香",
+	// 			"sex":"女",
+	// 			"hobby":"玩游戏",
+	// 			"number":"1"
+	// 		},
+	// 		{
+	// 			"name":"大海",
+	// 			"sex":"男",
+	// 			"hobby":"打篮球",
+	// 			"number":"2"
+	// 		},
+	// 		{
+	// 			"name":"图图",
+	// 			"sex":"男",
+	// 			"hobby":"敲代码",
+	// 			"number":"2"
+	// 		},
+	// 	]}
+	// };
+	var json ={
+            "people": [
+            { 
+			  "name":"杨明",
+			  "age": "2",
+			  "sex": "女", 
+			  "hobby": "男"
+			},
+            {  
+			  "name":"李辉燕",
+			  "age": "18",
+			  "sex": "女" ,
+			  "hobby": "吃饭睡觉,打豆豆"
+			},
+	        {
+	          "name":"夏晨原",
+	          "age": "19", 
+			  "sex": "男",
+	          "hobby": "敲代码" 
+			}
+	    ]};
+	// 声明变量存放组装后的数据   数组
+	var nan = 0;
+	var nv = 0;
+	var data = [];
+	var arr1 = ["男"];
+	var arr2 = ["女"];
+	for( let i = 0 ; i < json.people.length ; i ++ ){
+		if( json.people[i].sex == "男"){
+			// arr.push("男");
+			nan++;
+		}
+		else{
+			nv++;
+		}
+	}
+	arr1.push(nan);
+	arr2.push(nv);
+	data.push(arr1,arr2)
+	Highcharts.chart('container', {
+	chart: {
+		plotBackgroundColor: null,
+		plotBorderWidth: null,
+		plotShadow: false,
+		type: 'pie'
+	},
+	title: {
+		text: '统计班级人员的总数，男女比例'
+	},
+	tooltip: {
+		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	},
+	plotOptions: {
+		pie: {
+			allowPointSelect: true,
+			cursor: 'pointer',
+			dataLabels: {
+				enabled: true,
+				format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+				style: {
+					color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+				}
+			}
+		}
+	},
+
+	series: [{
+		name: '男女比例',
+		colorByPoint: true,
+		data:data
+
+		}]
+	});
+</script>
+</html>

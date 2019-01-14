@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			margin: 0 auto;
+			height: 400px;
+			width: 1200px;
+			/*background: red;*/
+			border: 1px solid #ccc;
+		}
+		.boxmin{
+			float: left;
+			height: 400px;
+			width: 400px;
+		}
+		.imgBox{
+			height: 400px;
+			width: 400px;
+			background: red;
+			overflow: hidden;
+			position: relative;
+		}
+		.imgBox img{
+			width: 100%;
+			height: 100%;
+		}
+		.boxmove{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			height: 100px;
+			width: 100px;
+			background: rgba(200,200,200,0.5);
+		}
+		.boxmax{
+			float: right;
+			height: 400px;
+			width: 400px;
+			position: relative;
+			overflow: hidden;
+		}
+		.boxmax img{
+			height: 800px;
+			width: 800px;
+			position: absolute;
+			top: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"> 
+		<div class="boxmin">
+			<div class="imgBox">
+				<img src="../img/img (2).jpg">
+			</div>
+			<div class="boxmove"></div>
+		</div>
+		<div class="boxmax"><img src="../img/img (2).jpg"></div>
+	</div>	
+</body>
+<script type="text/javascript">
+	// var oBox = document.querySelector(".box");
+	var oLeft = document.querySelector(".imgBox");
+	var oMark = document.querySelector(".boxmove");
+	var oRight = document.querySelector(".boxmax");
+	var oBigimg = document.querySelector(".boxmax img");
+
+	oLeft.onmousemove = function(event){
+		var evt = event || window.event;
+		//定义灰框位置x
+		var x = evt.offsetX - oMark.offsetWidth / 2;
+		var y = evt.offsetY - oMark.offsetHeight / 2;
+		//判断x坐标左右边界
+		if(x < 0){
+			x = 0
+		}else if( x > oLeft.offsetWidth - oMark.offsetWidth ){
+			x = oLeft.offsetWidth - oMark.offsetWidth;
+		}
+
+		//判断y坐标上下边界
+		if( y < 0 ){
+			y = 0;
+		}else if( y > oLeft.offsetHeight - oMark.offsetHeight ){
+			y = oLeft.offsetHeight - oMark.offsetHeight;
+		}
+
+		//设置灰块儿位置
+		
+		oMark.style.top = y + "px";
+		oMark.style.left = x + "px";
+
+		// //求移动距离比例
+		// var bilix = x / (oLeft.offsetWidth - oMark.offsetWidth);
+		// var biliy = y / (oLeft.offsetHeight - oMark.offsetHeight)
+
+		// //根据比例计算右边大图的移动距离
+		// var bigx = -bilix * (oBigimg.offsetWidth - oRight.offsetWidth ) + "px";
+		// var bigy = -biliy * (oBigimg.offsetHeight - oRight.offsetHeight )+ "px";
+
+		// //设置大图的位置
+		// oBigimg.style.left = bigx;
+		// oBigimg.style.top = bigy;
+
+	}
+</script>
+</html>

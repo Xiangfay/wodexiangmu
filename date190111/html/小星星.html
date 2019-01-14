@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        padding:0;
+        margin:0;
+      }
+      ul{
+        list-style:none;
+        width:200px;
+        margin:100px auto;
+      }
+      ul li{
+        width:24px;
+        height:24px;
+        background:url(../img/img.png);
+        display:inline-block;
+        background-size:cover;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function(){
+        var arr = document.querySelectorAll("ul li");
+      //  console.log(arr);
+        for( let i = 0 ; i < arr.length; i++){
+          arr[i].index = i;
+          //存储点击星星的下标
+          arr[i].onclick = function(){
+            for( let j = 0 ; j < arr.length ; j ++ ){
+              //清除其他星星的位置为最初的位置  星星变暗
+              arr[j].style.backgroundPosition = "0 0";
+            }
+            for( let j = 0 ; j < this.index + 1 ; j ++ ){
+              //遍历被点击之前的星星及他自身
+              arr[j].style.backgroundPosition = "0 24px";
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

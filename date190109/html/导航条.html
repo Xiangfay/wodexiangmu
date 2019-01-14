@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style media="screen">
+      /* 导航栏盒子 */
+      .nav-box{
+        width:100%;
+        height:42px;
+        background:#222222;
+        border-bottom: 1px solid #080808;
+        overflow:hidden;
+      }
+      /* a标签原本的样式 */
+      .nav>li>a {
+        color:#9d9d9d;
+        text-decoration: none;
+      }
+      /* 鼠标悬停效果   a标签的样式 */
+      .nav>li>a:hover{
+        background:#222222;
+        color: #fff;
+        border:none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav-box">
+      <ul class="nav nav-pills container">
+        <li role="presentation" style= "font-size:16px"><a href="#">Bootstrap中文网</a></li>
+        <!-- 最小屏显示的列表项 -->
+          <li role="presentation" class="visible-xs-block" style="float:right;">
+            <a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+          </li>
+        <li role="presentation" class="hidden-xs">
+          <a href="#">Bootstrap2中文文档</a>
+        </li>
+        <li role="presentation" class="hidden-xs">
+          <a href="#">Bootstrap3中文文档</a>
+        </li>
+        <li role="presentation" class="hidden-xs">
+          <a href="#">Bootstrap4中文文档</a>
+        </li>
+        <li role="presentation" class="hidden-xs">
+          <a href="#">Less 教程</a>
+        </li>
+        <li role="presentation" class="hidden-xs">
+          <a href="#">jQuery API</a>
+        </li>
+        <li role="presentation" class="hidden-xs">
+          <a href="#">网站案例</a>
+        </li>
+        <li role="presentation" class="visible-lg-block" style="float:right;">
+          <a href="#">关于</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+  </body>
+</html>

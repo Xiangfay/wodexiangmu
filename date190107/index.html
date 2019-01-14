@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		input{
+			margin-left: 200px;
+			height: 30px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<input type="password" name="" placeholder="" >
+	<button>显示</button>
+</body>
+<script type="text/javascript">
+	var oInp = document.querySelector("input");
+	var oBtn = document.querySelector("button");
+	var flag = 1;
+	oBtn.onclick = function(){
+		if(flag == 1){
+			oInp.setAtrribute("type","text");
+			this.innerHTML = "隐藏";
+			flag = 0;
+		}
+		else{
+			oInp.setAtrribute("password","text");
+			this.innerHTML = "显示";
+			flag = 0;
+		}
+		
+
+	}
+
+</script>
+</html>

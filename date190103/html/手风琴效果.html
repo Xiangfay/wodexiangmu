@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			margin: 100px auto;
+			width: 1200px;
+			height: 174px;
+			background: red;
+		}
+		.box div{
+			float: left;
+			width: 300px;
+			height: 174px;
+			overflow: hidden;
+			transition: all 1s;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div><img src="../img/f1.jpg"></div>
+		<div><img src="../img/f2.jpg"></div>
+		<div><img src="../img/f3.jpg"></div>
+		<div><img src="../img/f4.jpg"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		 $(".box div").hover(function(){
+		 	$(this).css({
+		 		"width":"550px"
+		 	})
+		 	$(this).siblings().css({
+		 		"width":"216px"
+		 	})
+		 })
+	})
+</script>
+</html>

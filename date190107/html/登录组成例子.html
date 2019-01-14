@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+用户名<input type="text" class="user" name="">
+密码：<input type="password" class="psd" name="">
+<button class="btn">注册</button>
+<p></p>
+</body>
+<script type="text/javascript">
+	// 判断正则
+$(function(){
+	$(".btn").click(function(){
+		var userVal = $(".user").val();
+		var psdVal = $(".psd").val();
+		// console.log(userVal,psdVal)
+
+		$.ajax({
+			url:`https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&phone=${userVal}&passwd=${psdVal}`,
+			type:"get",
+			success:function( res ){
+				// console.log(res)
+				if(res.code == 200){
+					$("p").html(res.msg)
+					window.open("https://www.baidu.com/")
+				}else if( res.code == 202 ){
+					$("p").html(res.msg)
+				}
+			}
+		})
+
+	})
+})
+</script>
+</html>

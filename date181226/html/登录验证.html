@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			margin: 0 auto;
+			height: 200px;
+			width: 350px;
+			/*background: #ccc;*/
+		}
+		.box input{
+			padding: 0px 10px;
+			margin: 10px auto;
+			line-height: 30px;
+		}
+		.box span{
+			display: block;
+			margin: 10px auto;
+			float: right;
+			height: 30px;
+			width: 150px;
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<input type="text" name="" placeholder="请输入用户名"><span></span>
+		<input type="password" name="" placeholder="请输入密码"><span></span>
+		<input type="password" name="" placeholder="验证密码"><span></span>
+		<input type="submit" name="" value="登录">
+		<input type="reset" name="" value="重置">
+
+	</div>
+</body>
+<!-- 用户名：必须是8-12位,以英文开头数字和下划线组成
+密码：密码必须是6-8位以英文开头，数字组成
+确认密码：验证是否与密码一致 跳转到登录页面-->
+<script type="text/javascript">
+	// 获取元素
+	var oSp = document.querySelectorAll("span");
+	var oIp = document.querySelectorAll("input");
+	var oName = document.querySelectorAll("input")[0];
+	var oPa = document.querySelectorAll("input")[1];
+	var oPanew = document.querySelectorAll("input")[2];
+	var oSub = document.querySelectorAll("input")[3];
+	var oRes = document.querySelectorAll("input")[4];
+	// 创建正则表达式  
+	var Name = /^[a-z][a-z\d_]{7,11}$/;
+	var pa = /^[a-z]\d{5,7}$/;
+	// console.log(pa.test("s123456"));
+	// 创建一个数组
+
+	 for( let i = 0 ; i < oSp.length ; i++){
+		oIp[i].onblur = function(){
+			if(i == 0){
+				if( Name.test(oName.value) ){
+					oSp[i].innerHTML="ok";
+					oSp[i].style.color = "green";
+				}
+				else{
+					oSp[i].innerHTML="8-12位,以英文开头数字和下划线组成";
+					oSp[i].style.color = "red";
+				}
+			}
+			else if(i == 1){
+				if( pa.test(oPa.value) ){
+					oSp[i].innerHTML="ok";
+					oSp[i].style.color = "green";
+				}
+				else{
+					oSp[i].innerHTML="6-8位以英文开头，数字组成";
+					oSp[i].style.color = "red";
+				}
+			}
+			else{
+				if( pa.test(oPa.value) ){
+					oSp[i].innerHTML="ok";
+					oSp[i].style.color = "green";
+				}
+				else{
+					oSp[i].innerHTML="两个密码输入不一致";
+					oSp[i].style.color = "red";
+				}
+			}
+		}
+	}
+	oSub.onclick = function (){
+		if(oSp[0].innerHTML=="ok"&&oSp[1].innerHTML=="ok"&&oSp[2].innerHTML=="ok")
+		{
+			alert("登录成功！");
+		}
+	}
+	oRes.onclick = function (){
+		 location.reload();
+	}
+
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			margin: 0px auto;
+			width: 1200px;
+			height: auto;
+		}
+		.box div{
+			font-size: 100px;
+			line-height: 1000px;
+			text-align: center;
+			width: 1200px;
+			height: 1000px;
+		}
+		.min{
+			position: fixed;
+			right: 0;
+			bottom: 50px;
+			height: 300px;
+			width: 50px;
+			list-style: none;
+		}
+		.min li{
+			text-align: center;
+			line-height: 50px;
+			height: 50px;
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div style="background: red">div1</div>
+		<div style="background: pink">div2</div>
+		<div style="background: #ccc">div3</div>
+		<div style="background: #00f">div4</div>
+		<div style="background: #f0f">div5</div>
+		<div style="background: #ff0">div6</div>
+		<ul class="min">
+			<li style="background: red">div1</li>
+			<li style="background: pink">div2</li>
+			<li style="background: #ccc">div3</li>
+			<li style="background: #00f">div4</li>
+			<li style="background: #f0f">div5</li>
+			<li style="background: #ff0">div6</li>
+		</ul>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	// 预加载
+	$(function(){
+		$(".min li").click(function(){
+			var index = $(this).index();
+			var top = $(".box div").eq(index).offset().top;
+			// for(let i = 0 ; i < index + 1 ; i++ ){
+			// 	top = + $(".box div")[i].offset().top;
+			// }
+			$(document).scrollTop(top);
+		})
+	})
+</script>
+</html>

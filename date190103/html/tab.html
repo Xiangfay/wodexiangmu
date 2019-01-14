@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul{
+			margin: 100px auto;
+			width: 1200px;
+			height: 100px;
+			/*border: 1px solid black;*/
+			display: flex;
+			justify-content: space-between;
+		}
+		ul li{
+			text-align: center;
+			line-height: 100px;
+			font-size: 30px;
+			list-style: none;
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+
+		}
+		ul li.active{
+			border-radius:50%;
+			background:red;
+			color:#fff;
+			transition:all 1s;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	// 预加载
+	$(function(){
+		
+		$("li").click(function(){
+			$(this).addClass("active").siblings().removeClass("active")
+			// $(this).css({
+			// 	"borderRadius":"50%",
+			// 	"background":"red",
+			// 	"color":"#fff",
+			// 	"transition":"all 1s"
+			// }).siblings().css({
+			// 	"borderRadius":"0%",
+			// 	"background":"",
+			// 	"color":"",
+			// 	"transition":"all 1s"
+			// })
+		})
+	})
+</script>
+</html>

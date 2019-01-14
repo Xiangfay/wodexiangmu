@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<button class="add">+</button>
+	<div class="box" style="height: 100px;width: 100px;background: #f00;display: none"></div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$(".add").click(function(){
+			var flag = $(this).html();
+			var index = $(this).index();
+			if(flag == "+"){
+				$(this).html("-");
+				$(".box").slideDown()
+
+			}
+			else{
+				$(this).html("+");
+				$(".box").slideUp();
+			}
+		})
+	})
+</script>
+</html>

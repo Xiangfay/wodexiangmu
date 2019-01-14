@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript"  src="../js/jquery-1.9.1.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			margin: 0 auto;
+			height: auto;
+			width: 1200px;
+		}
+		.imgBox{
+			width: 100%;
+			height: auto;
+		}
+		.imgBox img{
+			width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div >
+			<button class="sh">显示</button>
+			<button class="hi">隐藏</button>
+			<button class="down">滑入</button>
+			<button class="up">滑出</button>
+			<button class="in">淡入</button>
+			<button class="out">淡出</button>
+			<button class="shhi">显示/隐藏</button>
+			<button class="du">滑入/滑入</button>
+			<button class="dan">淡入/淡入</button>
+			<div class="imgBox"><img src="../img/7.jpg"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	// 预加载
+	// 当全部资源加载成功之后执行
+	$(function(){
+		// 显示隐藏
+		$(".hi").click(function(){
+			$(".imgBox").hide(500)
+		})
+		$(".sh").click(function(){
+			$(".imgBox").show(500)
+		})
+		// 划入，划出
+		$(".down").click(function(){
+			$(".imgBox").slideDown(500)
+		})
+		$(".up").click(function(){
+			$(".imgBox").slideUp(500)
+		})
+		// 淡入，淡出
+		$(".in").click(function(){
+			$(".imgBox").fadeIn(500)
+		})
+		$(".out").click(function(){
+			$(".imgBox").fadeOut(500)
+		})
+		$(".shhi").click(function(){
+			$(".imgBox").toggle(500)
+		})
+		$(".du").click(function(){
+			$(".imgBox").slideToggle(500)
+		})
+		$(".dan").click(function(){
+			$(".imgBox").fadeToggle(500)
+		})
+	})
+	// 仅当前预加载
+	
+</script>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 900px;
+			height: 500px;
+			margin:  10px auto;
+			border: 1px solid black;
+		}
+		.left{
+			width: 400px;
+			height: 400px;
+			border: 1px solid black;
+			float: left;
+			position: relative;
+		}
+		#left{
+			width: 400px;
+			height: 400px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10;
+		}
+
+		.img{
+			width: 400px;
+			height: 400px;
+		}
+		.img img{
+			width: 100%;
+			height: 100%;
+		}
+		#mark{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: black;
+			opacity: .4;
+			z-index: 1;
+		}
+
+
+		.right{
+			float: right;
+			width: 400px;
+			height: 400px;
+			border: 1px solid black;
+			overflow:hidden;
+			position: relative;
+		}
+		#bgimg{
+			width: 1600px;
+			height: 1000px;
+			position: absolute;
+		}
+		#bgimg img{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+<div class="box">
+<div class="left">
+	<div id="left"></div>
+	<div class="img">
+		<img src="../img/img (2).jpg">
+	</div>
+	<div id="mark"></div>
+</div>
+
+<div class="right">
+	<div id="bgimg">
+		<img src="../img/img (2).jpg">
+	</div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+	var oLeft = document.querySelector("#left");
+	var oMark = document.querySelector("#mark");
+
+	var oRight = document.querySelector(".right");
+	var oBigimg = document.querySelector("#bgimg");
+	
+	oLeft.onmouseover = function(){
+		//oMark.style.display = "block";
+	}
+	oLeft.onmouseout = function(){
+		//oMark.style.display = "none";
+	}
+
+	oLeft.onmousemove = function(event){
+		var evt = event || window.event;
+		//console.log(1)
+
+		//定义灰框位置x
+		var x = evt.offsetX - oMark.offsetWidth / 2;
+		var y = evt.offsetY - oMark.offsetHeight / 2;
+		//console.log(oLeft.offsetWidth)
+		
+		//判断x坐标左右边界
+		if(x < 0){
+			x = 0
+		}else if( x > oLeft.offsetWidth - oMark.offsetWidth ){
+			x = oLeft.offsetWidth - oMark.offsetWidth;
+		}
+
+		//判断y坐标上下边界
+		if( y < 0 ){
+			y = 0;
+		}else if( y > oLeft.offsetHeight - oMark.offsetHeight ){
+			y = oLeft.offsetHeight - oMark.offsetHeight;
+		}
+
+		//设置灰块儿位置
+		
+		oMark.style.top = y + "px";
+		oMark.style.left = x + "px";
+
+		//求移动距离比例
+		var bilix = x / (oLeft.offsetWidth - oMark.offsetWidth);
+		var biliy = y / (oLeft.offsetHeight - oMark.offsetHeight)
+
+		//根据比例计算右边大图的移动距离
+		var bigx = -bilix * (oBigimg.offsetWidth - oRight.offsetWidth ) + "px";
+		var bigy = -biliy * (oBigimg.offsetHeight - oRight.offsetHeight )+ "px";
+
+		//设置大图的位置
+		console.log(bigx)
+		oBigimg.style.left = bigx;
+		oBigimg.style.top = bigy;
+
+	}
+
+</script>
+<ml>

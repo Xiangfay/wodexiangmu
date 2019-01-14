@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"> 
+		<input type="text" name="" placeholder="请输入QQ号">
+	</div>
+</body>
+<script type="text/javascript">
+	// 验证qq号
+	var reg = /^[1-9]\d{4,9}$/;
+	// 验证固定电话   012-12323341
+	var reg1 = /^(\d{3,4}-)?[1-9]\d{6,7}$/;
+	// 验证邮政编码 不以0开头   6个
+	var reg2 = /^[1-9]\d{5}$/;
+	// 验证邮箱  仅验证@   .是否存在
+	var reg3 = /^\w+@(qq|128)\.(com|cn)$/
+	var t = reg3.test("swqwqo@qq.com");
+	// 去除字符串中的空格
+	var str= "我    喜欢     你！";
+	var reg4 =/\s/g;
+	var str1 = str.replace(reg4,"")
+	// 替换敏感词汇
+	var s = "翠花，上加盐酸菜，哟呵，小妞真好看，给爷笑个五毛钱的，狗蛋，居然敢拒绝老子，你是笨猪吗";
+	var reg5 = /[翠花|小妞|爷|狗蛋|老子|笨猪吗]/g;
+	var s1=s.replace(reg5,"*");
+	console.log(s);
+	console.log(s1);
+
+
+
+
+</script>
+</html>

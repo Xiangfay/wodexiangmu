@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	// https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&json=1&p=3&sid=22084_1436_13548_21120_22036_22073&req=2&csor=0&cb=callback
+	$(function(){
+		$.ajax({
+			url:" https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&json=1&p=3&sid=22084_1436_13548_21120_22036_22073&req=2&csor=0&cb=callback",
+			type:"get",
+			dataType:"jsonp",
+			jsonpCallback:"callback",
+			success:function( res ){
+				console.log(res)
+			}
+		})
+	})
+</script>
+</html>

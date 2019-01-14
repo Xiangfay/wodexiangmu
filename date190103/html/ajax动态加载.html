@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.img-box{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #ccc;
+		}
+		button{
+			padding: 5px 10px;
+		}
+	</style>
+</head>
+<body>
+	
+	<button>点击登录</button>
+	<div class="img-box">
+		<img src="../img/img.gif">
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url:"http://127.0.0.1/text/date191202/json/data.json",
+			type:"get",
+			success:function (res){
+				// 当获取成功执行的函数
+				console.log(res)
+			},
+			error:function(err){
+				// 当获取失败执行的函数
+				console.log(err)
+			},
+			complete:function(){
+				// 无论成功还是失败都会执行的函数
+				console.log("ajax完成")
+			}
+		})
+		$(".img-box").css
+	})
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			margin: 10px auto;
+			height: 200px;
+			width: 200px;
+			padding: 10px;
+			background: #ccc;
+		}
+		.name{
+			padding: 5px;
+			margin: 10px auto;
+			width: 180px;
+		}
+		.val{
+			padding: 5px;
+			margin: 10px auto;
+			width: 180px;
+		}
+		.btn{
+			display: block;
+			padding: 5px 10px;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<input class="name" type="text" name="" placeholder="用户名">
+		<input class="val" type="password" name="" placeholder="密码">
+		<input class="che" type="checkbox" name="">15天免登录
+		<input class="btn" type="submit" name="" value="登录">
+	</div>
+</body>
+<script type="text/javascript">
+	var d= new Date();
+	var oName = document.querySelector(".name");
+	var oVal = document.querySelector(".val");
+	var oChe = document.querySelector(".che");
+	var oBtn = document.querySelector(".btn");
+	oBtn.onclick = function(){
+		if(oName == ""){
+			alert("用户名不能为空！");
+		}
+		else if(oVal == ""){
+			alert("密码不能为空！");
+		}
+		else{
+			var name =  oName.value;
+			var val = oVal.value;
+			if(oChe.checkbox){
+				document.cookie = name + "=" + val +";expires="+d.toGMTString(d.setTime(d.getTime()+time*24*60*60*1000))
+			}
+			else{
+				document.cookie =name + "=" + val;
+			}
+		}
+	}
+</script>
+</html>

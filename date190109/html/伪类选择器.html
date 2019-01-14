@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>伪类选择器</title>
+    <style media="screen">
+      *{
+        padding:0;
+        margin:0;
+      }
+      .item{
+        margin:50px auto;
+        width:500px;
+        list-style:none;
+      }
+      .item li{
+        float:left;
+        margin:10px;
+      }
+      .item li:after{
+        content:"|";
+        font-size:20px;
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="item">
+      <li>首页</li>
+      <li>电影</li>
+      <li>音乐</li>
+      <li>游戏</li>
+      <li>新闻</li>
+    </ul>
+
+  </body>
+</html>

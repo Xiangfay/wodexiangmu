@@ -1,0 +1,282 @@
+/* 导航条样式的覆盖 */
+
+/* @media (min-width: 1200px)
+.container {
+    width: 1000px;
+} */
+/* 导航栏样式开始 */
+.navbar-default{
+    height: 54px;
+    border-radius: 0px;
+    background: #191d3a;
+}
+.navbar-inverse {
+    background-color: #191d3a;
+    border: none;
+}
+/* logo样式 */
+.navbar-brand>img{
+  margin-top: -10px;
+  margin-right: 35px;
+}
+.nav>li {
+  border-right: 1px solid #252947;
+}
+/* 按钮  关于我们 */
+.btn-default{
+  color: #fff;
+  border: none;
+  text-shadow: none;
+  background:#38b774;
+}
+/* 鼠标悬停效果 */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  color:#E2E4ED;
+  background:#252947;
+  }
+.btn-default:focus, .btn-default:hover {
+  background-color: #2a963f;
+  color:#E2E4ED;
+  background-position: 0 -15px;
+}
+/* 导航栏内部图片样式的修改 */
+.nav>li>a>img {
+    max-width: 28px;
+}
+.navbar-inverse .navbar-nav>li>a>span {
+  margin-left: 30px;
+  color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav>li>a>span:hover {
+  color:#E2E4ED;
+}
+.navbar-right>li>a>img{
+  margin-top: -55px;
+  /* padding-top: -20px; */
+}
+/* 导航栏样式结束 */
+
+/* 轮播图样式开始 */
+.container-lunbo{
+  margin-top: -20px;
+  width: 100%;
+  height: auto;
+}
+/* 存放轮播图  图片 */
+.lunbo-img{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.lunbo-img>.lunbo-btn{
+  height: 20px;
+  width: 100px;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+/* 轮播图背景图片的插入 */
+.lunbo-img>ul>li{
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.lunbo-img>ul>.lunbo-img1{
+  background-image: url(../img/index/banner20181122.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.lunbo-img>ul>.lunbo-img2{
+  background-image: url(../img/index/2018banner.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.lunbo-img>ul>.lunbo-img3{
+  background-image: url(../img/index/bpt_banneren.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.lunbo-img>ul>.lunbo-img4{
+  background-image: url(../img/index/probanner4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.lunbo-img>.lunbo-btn button{
+  height: 12px;
+  width: 12px;
+  border: none;
+  outline: none;
+  background: #fff;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+/* 最后一张轮播图上面的内容 */
+.lunbo-div{
+  position: absolute;
+  top: 70px;
+  right: 150px;
+  height:274px;
+  width: 460px;
+  background: red;
+}
+.online-game{
+  height: 38px;
+  width: 116px;
+  position: absolute;
+  top: 0px;
+  right:0px;
+  line-height: 38px;
+  text-align: center;
+  background-image: url(../img/index/online.png);
+
+}
+/* 轮播图样式结束 */
+/* 新闻游戏轮播样式开始 */
+.max-img{
+  position: absolute;
+  text-align: center;
+  /* background: #38b774; */
+}
+/* 图片下面的文字说明 */
+.img-info{
+  margin-left: 18px;
+  margin-top: -10px;
+  width: 218px;
+  height: auto;
+}
+.img-info>h5{
+  line-height: 35px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.img-info>span{
+  line-height: 18px;
+  font-size: 12px;
+  color: #38b774;
+  padding-right: 10px;
+  background-image:url(../img/index/arrow.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* 鼠标悬停文字颜色改变 */
+.img-info:hover{
+  background: #38b774;
+  cursor: pointer;
+  color: #fff;
+}
+.img-info:hover. img-info-span{
+  color: #fff;
+  background-image:url(../img/index/arrow_hover.png);
+}
+/* 控制点的设置 */
+.carousel-indicators {
+  position: absolute;
+  bottom: -50px;
+  left: 48%;
+  z-index: 15;
+  width: 50px;
+  height: 10px;
+  margin-left: 0;
+  background-color: #fff;
+  text-align: center;
+  list-style: none;
+}
+/* 每一项的默认样式 */
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color:#b5c0cb;
+  border:none;
+  border-radius: 10px;
+}
+/* 当前控制点的样式 */
+.carousel-indicators .active {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  background-color: #38b774;
+}
+/* 水平线的样式 */
+.line-hr{
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  height: 1px;
+  background-color: #dbe1e7;
+}
+/* 新闻游戏轮播样式结束 */
+
+
+
+
+
+/* 博雅新闻样式 开始*/
+/* 左边列表 */
+.mtitle-left{
+  width: 100%;
+  height: 130px;
+  background-image: url(../img/index/bynewsbg.jpg);
+  background-repeat: no-repeat;
+}
+
+
+
+/* 右边列表 */
+.info-right{
+  color: #fff;
+  background-image: url(../img/index/byhrbg3.jpg);
+  background-repeat: no-repeat;
+}
+.list-group-item:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: rgba(255,255,255,0);
+  border: none;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mtitle {
+  position: relative;
+  margin-left: 50px;
+  height: 80px;
+  width: 100%;
+}
+.mtitle>h2{
+  font-weight: 600;
+}
+.list-group-item>.mtitle>span{
+  display: block;
+  text-align: center;
+  width: 66px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 20%;
+}
+
+/* 博新闻样式 结束 */

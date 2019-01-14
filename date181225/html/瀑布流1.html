@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+				/*使用通配符将内外边距都设置为零, 这样看着好看*/
+		*{
+		    margin: 0px;
+		    padding: 0px;
+		}
+		/*将主容器的布局方式设置为相对布局*/
+		.contianer{
+			margin: 0px auto;
+			/*margin-left:100px; 	*/
+			width: 1200px;
+			height: auto;
+			/*overflow: hidden;*/
+			background: red;
+		    position: relative;
+		}
+
+		.box{
+		    padding: 12px;
+		    float: left;
+		}
+		/*将承载图片的容器定制颜色及边框大小和圆角*/
+		.boximg{
+		    padding: 6px;
+		    box-shadow: 0 0 5px #ccc;
+		    border: 1px solid #cccccc;
+		    border-radius: 5px;
+		}
+		/*定制图片尺寸*/
+		.boximg img{
+		    width: 360px;
+		}
+	</style>
+</head>
+<body>
+	<div class="contianer">
+		<div class="box">
+	        <div class="boximg">
+	            <img src="../img/1.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/2.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/3.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/4.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/5.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/6.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/7.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/8.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/9.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/10.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/11.jpg">
+	        </div>
+	    </div>
+	    <div class="box">
+	        <div class="boximg">
+	            <img src="../img/12.jpg">
+	        </div>
+	    </div>
+
+	</div>
+	    
+
+
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+		var arr = document.querySelectorAll(".box");
+		// 求出每行能放多少个图片
+		// 1,获取容器宽度
+		var container = document.querySelector(".contianer").offsetWidth;
+		// 2，获取单个图片宽度
+		var imgWidth = arr[0].offsetWidth;
+		// 3,求能存放的个数
+		var count = parseInt(container/imgWidth);
+
+		// console.log(count)
+
+		// 创建记录高度的数组
+		var arrHeight = [];
+		for( var i = 0 ; i < arr.length ; i++  ){
+			if( i < count ){
+				// 记录第一排的高度
+				arrHeight[i] = arr[i].offsetHeight;
+			}else{
+				// 从第二排开始寻找最矮得列增加图片
+				var minHeight = Math.min.apply(null,arrHeight);
+				// 找到最矮列的下标 minIndex
+				var minIndex;
+				for( var j = 0 ; j < arrHeight.length ; j++ ){
+					if( arrHeight[j] == minHeight ){
+						minIndex = j;
+					}
+				}
+
+				// 将当前图片插入至最小高度的位置
+				arr[i].style.position = "absolute";
+				arr[i].style.left = arr[i].offsetWidth*minIndex + "px";
+				arr[i].style.top = minHeight + "px";
+
+				// console.log(minIndex)
+				// 更新高度数组
+				arrHeight[minIndex] += arr[i].offsetHeight;
+
+			}
+		}
+	}
+</script>
+</html>

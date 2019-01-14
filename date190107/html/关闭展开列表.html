@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.box{
+		height: auto;
+		width: 200px;
+		overflow: hidden;
+	}
+	.item{
+		text-align: center;
+		width: 100%;
+		height: auto;
+	}
+	.item div{
+		width: 100%;
+		height: auto;
+		background: #ccc;
+	}
+	.item button{
+		margin-right: 10px;
+		background: none;
+		outline: none;
+		border: none;
+	}
+	.item ul{
+		display: none;
+		width: 100%;
+		height: auto;
+		background: #ddd;
+	}
+</style>
+</head>
+<body>
+	<div class="box">
+		<div class="item">
+			<div><button>+</button><span>粮油百货</span></div>		
+			<ul class="list">
+				<li>黄油</li>
+				<li>大米</li>
+				<li>小米</li>
+				<li>面粉</li>
+			</ul>
+		</div>
+		<div class="item">
+			<div><button>+</button><span>海鲜水产</span></div>		
+			<ul class="list">
+				<li>黄油</li>
+				<li>大米</li>
+				<li>小米</li>
+				<li>面粉</li>
+			</ul>
+		</div>
+		<div class="item">
+			<div><button>+</button><span>快送外卖</span></div>		
+			<ul class="list">
+				<li>黄油</li>
+				<li>大米</li>
+				<li>小米</li>
+				<li>面粉</li>
+			</ul>
+		</div>
+	</div>
+</body>
+ <script type="text/javascript">
+ 	$(function(){
+		$(".item div button").click(function(){
+			var flag = $(this).html();
+			var index = $(this).index();
+			// var top = $(".item").eq(index).offset().top;
+			if(flag == "+"){
+				$(this).html("-");
+				$(".list").slideDown()
+
+			}
+			else{
+				$(this).html("+");
+				$(".list").slideUp();
+			}
+		})
+	})
+ </script>
+</html>

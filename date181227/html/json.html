@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var str = '{"name":"二丫","age":"18"}';
+	var json = JSON.parse(str);
+	console.log(json);
+	console.log(JSON.stringify(json));
+	console.log("\uD842\uDFB6"); 
+	console.log("\uD842\uDFB2");
+	console.log("\u20BB");
+	console.log("\u{20BB9}")
+
+	var s = "𠮹";
+    console.log(s.length)// 2
+    console.log(s.charAt(0))// ''
+    console.log(s.charAt(1))// ''
+    console.log(s.charCodeAt(0))// 55362
+    console.log(s.charCodeAt(1))// 57273
+
+    var s = "𠮹";
+
+        console.log(s.codePointAt(0)) // 134073
+        console.log(s.codePointAt(1)) // 57273
+    console.log(String.fromCharCode(0x20BB9 ))
+    console.log("1".repeat(4));
+
+
+	
+</script>
+</html>
